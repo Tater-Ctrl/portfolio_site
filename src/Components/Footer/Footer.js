@@ -5,7 +5,7 @@ export default class Footer extends React.Component {
     render() {
         return (
             <div className="footer_container">
-                <h2>The code for this website is available on <a href="home">Github</a></h2>
+                <h2>The code for this website is available on <a href="https://github.com/Tater-Ctrl/portfolio_site" target="_blank" rel="noreferrer">Github</a></h2>
                 <div className="footer_info">
                     <div>
                         <ul>
@@ -14,9 +14,6 @@ export default class Footer extends React.Component {
                         
                     </div>
                     <div>
-                        <ul>
-                            <li><h3></h3></li>
-                        </ul>
                     </div>
                 </div>
             </div>

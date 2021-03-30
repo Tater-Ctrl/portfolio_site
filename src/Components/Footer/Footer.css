@@ -11,12 +11,12 @@
 }
 
 .footer_container h2 a {
-    color: rgb(136, 66, 136);
+    color: rgb(155, 73, 170);
     text-shadow: rgb(110, 34, 110) 1px 1px 1px;
 }
 
 .footer_container h2 a:hover {
-    color: rgb(159, 87, 172);
+    color: rgb(179, 121, 189);
 }
 
 .footer_info {
