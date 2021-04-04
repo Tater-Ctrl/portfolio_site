@@ -9,7 +9,9 @@ import TerrainDeformation2DJPG  from '../../Resources/terrain_deformation_2d.jpg
 import HouseBuilding2DGIF       from '../../Resources/house_building_2d.gif';
 import HouseBuilding2DJPG       from '../../Resources/house_building_2d.JPG';
 import ProceduralMap2DJPG       from '../../Resources/procedural_map_2d.jpg';
-import BrainJam                 from '../../Resources/brainjam.jpg';
+import HobbySiteOne             from '../../Resources/website_hobby_one.JPG';
+import HobbySiteTwo             from '../../Resources/website_hobby_two.JPG';
+import Portfolio                from '../../Resources/portfolio_image.jpg';
 
 var consoleText1 = false;
 var consoleText2 = false;
@@ -118,22 +120,22 @@ export default class MainBodyFrontPage extends React.Component {
                             <div id="main_project_element">
                                 <h1 >Current Project</h1>
                                 <p>
-                                    I've taken an interest in Game Jams lately, currently participating in Brain Jam | March 2021. {"\n"}
+                                    Creating a portfolio websites (This one specifically) and filling it up with previous and current projects I got going on.
                                 </p>
                                 <p>
-                                    I've switched my focus from creating game mechanics, to now creating small scope games, and Game Jams present a perfect opportunity for that, as well as having the chance to collaborate with other like-minded individuals.
+                                    I've been jumping back and forth between Game Development and Web Development for quite some time, I figured it was time to combine both to show off some of the things I've done rather than letting it sit in a backup HDD.
                                 </p>
                                 <p className="main_project_text_1280">
-                                    On this particular Game Jam I will be collaborating with 1 other individual programmer, using Unity for a 2D Platformer game most likely.
+                                    The website itself is not complete as of yet, it's lacking a lot of my projects and basic website functionality like mobile support etc and other things. Eventually I hope to have a page per project talking about what techniques I used and showing snippets of code where I explain how I used them.
                                 </p>
                                 <p className="main_project_text_1600">
-                                    Finally collaborating also gives me the opportunity to brush up on Source Control and get more familiar working alongside others, and also accomodate for their ideas and wishes when it comes to game development while making something interesting.
+                                    I've also got some bigger side projects going on at the moment, I recently started collaborating with 2 different groups on different projects, so the website got slightly delayed cause of that.
                                 </p>
                                 <a href="home" >
                                     <h3 className="main_project_button">Read More</h3>
                                 </a>
                             </div>
-                            <img src={ BrainJam } alt="Participating in a Game Jam called Brain Jam" id="main_project_element"/>
+                            <img src={ Portfolio } alt="Participating in a Game Jam called Brain Jam" id="main_project_element"/>
                         </div>
                     </div>
                     <div className="container_title" id="portfolio">
@@ -143,31 +145,31 @@ export default class MainBodyFrontPage extends React.Component {
                         </div>
                     </div>
                     <div className="project_card_container" id="game_mechanics">
-                        <a href="home" className="project_card" id="multiplayer_inventory">
+                        <a href="https://github.com/Tater-Ctrl/2D-RPG-Mechanics/tree/master/Inventory" target="_blank" rel="noreferrer" className="project_card" id="multiplayer_inventory">
                             <img src={ MultiplayerInventoryJPG } alt="Unity Multiplayer Inventory"></img>
                             <div>
                                 <h2>Unity Multiplayer Inventory</h2>
                             </div>
                         </a>
-                        <a href="home" className="project_card" id="procedural_map_2d">
+                        <a href="https://github.com/Tater-Ctrl/2D-RPG-Mechanics/tree/master/Map%20Generation" target="_blank" rel="noreferrer" className="project_card" id="procedural_map_2d">
                             <img src={ ProceduralMap2DJPG } alt="Unity Procedural Map Generation"></img>
                             <div>
                                 <h2>Unity Procedural Map Generation</h2>
                             </div>
                         </a>
-                        <a href="home" className="project_card" id="terrain_deformation_2d">
-                            <img src={ TerrainDeformation2DJPG } alt="Unity Multiplayer Inventory"></img>
+                        <a href="https://github.com/Tater-Ctrl/2D-RPG-Mechanics/tree/master/Terraforming" target="_blank" rel="noreferrer" className="project_card" id="terrain_deformation_2d">
+                            <img src={ TerrainDeformation2DJPG } alt="Unity Terraforming 2D"></img>
                             <div>
                                 <h2>Terraforming and Water Flow 2D</h2>
                             </div>
                         </a>
-                        <a href="home" className="project_card" id="house_building_2d">
+                        <a href="https://github.com/Tater-Ctrl/2D-RPG-Mechanics/tree/master/Base%20Building" target="_blank" rel="noreferrer" className="project_card" id="house_building_2d">
                             <img src={ HouseBuilding2DJPG } alt="Unity Multiplayer Inventory"></img>
                             <div>
                                 <h2>Unity House Building 2D</h2>
                             </div>
                         </a>
-                        <a href="home" className="project_card" id="stardew_valley_fishing">
+                        <a href="https://github.com/Tater-Ctrl/2D-RPG-Mechanics/tree/master/Fishing" target="_blank" rel="noreferrer" className="project_card" id="stardew_valley_fishing">
                             <img src={ StardewFishingJPG } alt="Unity Stardew Valley Replicated Fishing Mechanic"></img>
                             <div>
                                 <h2>Unity Stardew Valley Fishing Mechanic</h2>
@@ -176,19 +178,39 @@ export default class MainBodyFrontPage extends React.Component {
                     </div>
                     
                     {/* START OF GAME JAM SECTION */}
-                    <div className="container_title" id="gamejams">
+                    <div className="container_title">
                         <div id="console_text_container">
                             <h1 ref={(el) => this.console_text_two = el}>Game Jams</h1>
                             <h1 ref={(el) => this.console_text_two_underline = el}>_</h1>
                         </div>
                     </div>
+                        <div className="project_card_container" id="gamejams">
+                            <h2 style={{color: "white"}}>
+                               - Currently Empty -
+                            </h2>
+                        </div>
 
                     {/* START OF WEBSITE SECTION */}
-                    <div className="container_title" id="websites">
+                    <div className="container_title">
                         <div id="console_text_container">
                             <h1 ref={(el) => this.console_text_three = el}>Websites</h1>
                             <h1 ref={(el) => this.console_text_three_underline = el}>_</h1>
                         </div>
+                    </div>
+
+                    <div className="project_card_container" id="websites">
+                        <a href="https://tater-ctrl.github.io/Hobby-Project-Site/" target="_blank" rel="noreferrer" className="project_card" id="website_hobby_one">
+                            <img src={ HobbySiteOne } alt="Website I used to practice on"></img>
+                            <div>
+                                <h2>Website Practice</h2>
+                            </div>
+                        </a>
+                        <a href="https://tater-ctrl.github.io/Hobby-Project-2/" target="_bank" rel="noreferrer" className="project_card" id="website_hobby_two">
+                            <img src={ HobbySiteTwo } alt="Website I used to practice on"></img>
+                            <div>
+                                <h2>Website Practice 2 (Only Mobile)</h2>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
