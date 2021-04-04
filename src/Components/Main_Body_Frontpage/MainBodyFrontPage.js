@@ -1,18 +1,47 @@
 import React from 'react';
 import './MainBodyFrontPage.css';
-import StardewFishingJPG from '../../Resources/stardewfishing_small.jpg';
-import BrainJam from '../../Resources/brainjam.jpg';
-import './MainBodyFunctions.js';
+import StardewFishingJPG        from '../../Resources/stardewfishing_small.jpg';
+import MultiplayerInventoryJPG  from '../../Resources/multiplayer_inventory.jpg';
+import StardewFishingGIF        from '../../Resources/fishing_mechanic.gif';
+import MultiplayerInventoryGIF  from '../../Resources/multiplayer_inventory.gif';
+import TerrainDeformation2DGIF  from '../../Resources/terrain_deformation_2d.gif';
+import TerrainDeformation2DJPG  from '../../Resources/terrain_deformation_2d.jpg';
+import HouseBuilding2DGIF       from '../../Resources/house_building_2d.gif';
+import HouseBuilding2DJPG       from '../../Resources/house_building_2d.JPG';
+import ProceduralMap2DJPG       from '../../Resources/procedural_map_2d.jpg';
+import BrainJam                 from '../../Resources/brainjam.jpg';
 
 var consoleText1 = false;
 var consoleText2 = false;
 
-class MainBodyFrontPage extends React.Component {
+var GIFContainer = {
+    stardew_valley_fishing: StardewFishingGIF,
+    multiplayer_inventory: MultiplayerInventoryGIF,
+    terrain_deformation_2d: TerrainDeformation2DGIF,
+    house_building_2d: HouseBuilding2DGIF,
+    procedural_map_2d: ProceduralMap2DJPG,
+}
 
-    componentDidMount() {
+var JPGContainer = {
+    stardew_valley_fishing: StardewFishingJPG,
+    multiplayer_inventory: MultiplayerInventoryJPG,
+    terrain_deformation_2d: TerrainDeformation2DJPG,
+    house_building_2d: HouseBuilding2DJPG,
+    procedural_map_2d: ProceduralMap2DJPG,
+}
+
+export default class MainBodyFrontPage extends React.Component {
+    componentDidMount = () => {
         window.addEventListener('scroll', this.handleScroll, true);
         this.consoleTextUnderline(this.console_text_one_underline);
         this.consoleTextUnderline(this.console_text_two_underline);
+
+        var gameMechanicsChildren = [].slice.call(document.getElementById("game_mechanics").children);
+
+        gameMechanicsChildren.forEach(element => {
+            element.addEventListener("mouseenter", e => this.swapGif(element));
+            element.addEventListener("mouseleave", e => this.swapJPG(element));
+        });
     }
     
     handleScroll = () => {
@@ -24,6 +53,18 @@ class MainBodyFrontPage extends React.Component {
             this.consoleTextAnim(this.console_text_two, this.console_text_two.innerHTML);
             consoleText2 = true;
         }
+    }
+
+    swapGif = (element) => {
+        var image = element.firstChild;
+        var gif = GIFContainer[element.id];
+        image.src = gif;
+    }
+    
+    swapJPG = (element) => {
+        var image = element.firstChild;
+        var jpg = JPGContainer[element.id];
+        image.src = jpg;
     }
 
     consoleTextAnim = (id, textArray) => {
@@ -56,7 +97,7 @@ class MainBodyFrontPage extends React.Component {
         }, 1000);
     }
 
-    consoleTextInViewport(offset, id) {
+    consoleTextInViewport = (offset, id) => {
         if(!id) return false;
         const top = id.getBoundingClientRect().top;
         return (top + offset) >= 0 && (top - offset) <= window.innerHeight;
@@ -89,86 +130,57 @@ class MainBodyFrontPage extends React.Component {
                             <img src={ BrainJam } alt="Participating in a Game Jam called Brain Jam" id="main_project_element"/>
                         </div>
                     </div>
-                    <div className="container_title">
+                    <div className="container_title" id="portfolio">
                         <div id="console_text_container">
                             <h1 ref={(el) => this.console_text_one = el}>Game Mechanics</h1>
                             <h1 ref={(el) => this.console_text_one_underline = el}>_</h1>
                         </div>
                     </div>
-                    <div className="project_card_container">
+                    <div className="project_card_container" id="game_mechanics">
+                        <a href="home" className="project_card" id="multiplayer_inventory">
+                            <img src={ MultiplayerInventoryJPG } alt="Unity Multiplayer Inventory"></img>
+                            <div>
+                                <h2>Unity Multiplayer Inventory</h2>
+                            </div>
+                        </a>
+                        <a href="home" className="project_card" id="procedural_map_2d">
+                            <img src={ ProceduralMap2DJPG } alt="Unity Procedural Map Generation"></img>
+                            <div>
+                                <h2>Unity Procedural Map Generation</h2>
+                            </div>
+                        </a>
+                        <a href="home" className="project_card" id="terrain_deformation_2d">
+                            <img src={ TerrainDeformation2DJPG } alt="Unity Multiplayer Inventory"></img>
+                            <div>
+                                <h2>Terraforming and Water Flow 2D</h2>
+                            </div>
+                        </a>
+                        <a href="home" className="project_card" id="house_building_2d">
+                            <img src={ HouseBuilding2DJPG } alt="Unity Multiplayer Inventory"></img>
+                            <div>
+                                <h2>Unity House Building 2D</h2>
+                            </div>
+                        </a>
                         <a href="home" className="project_card" id="stardew_valley_fishing">
-                            <img src={ StardewFishingJPG } alt="Stardew Valley Replicated Fishing Mechanic"></img>
+                            <img src={ StardewFishingJPG } alt="Unity Stardew Valley Replicated Fishing Mechanic"></img>
                             <div>
-                                <h2>Stardew Valley Fishing Mechanic</h2>
-                            </div>
-                        </a>
-                        <a href="home" className="project_card">
-                            <img src={ StardewFishingJPG } alt="Stardew Valley Replicated Fishing Mechanic"></img>
-                            <div>
-                                <h2>Stardew Valley Fishing Mechanic</h2>
-                            </div>
-                        </a>
-                        <a href="home" className="project_card">
-                            <img src={ StardewFishingJPG } alt="Stardew Valley Replicated Fishing Mechanic"></img>
-                            <div>
-                                <h2>Stardew Valley Fishing Mechanic</h2>
-                            </div>
-                        </a>
-                        <a href="home" className="project_card">
-                            <img src={ StardewFishingJPG } alt="Stardew Valley Replicated Fishing Mechanic"></img>
-                            <div>
-                                <h2>Stardew Valley Fishing Mechanic</h2>
-                            </div>
-                        </a>
-                        <a href="home" className="project_card">
-                            <img src={ StardewFishingJPG } alt="Stardew Valley Replicated Fishing Mechanic"></img>
-                            <div>
-                                <h2>Stardew Valley Fishing Mechanic</h2>
+                                <h2>Unity Stardew Valley Fishing Mechanic</h2>
                             </div>
                         </a>
                     </div>
-                    <div className="container_title">
+                    
+                    {/* START OF GAME JAM SECTION */}
+                    <div className="container_title" id="gamejams">
                         <div id="console_text_container">
                             <h1 ref={(el) => this.console_text_two = el}>Game Jams</h1>
                             <h1 ref={(el) => this.console_text_two_underline = el}>_</h1>
                         </div>
                     </div>
                     <div className="project_card_container">
-                        <div className="project_card">
-                            <img src={ StardewFishingJPG } alt="Stardew Valley Replicated Fishing Mechanic"></img>
-                            <div>
-                                <h2>Stardew Valley Fishing Mechanic</h2>
-                            </div>
-                        </div>
-                        <div className="project_card">
-                            <img src={ StardewFishingJPG } alt="Stardew Valley Replicated Fishing Mechanic"></img>
-                            <div>
-                                <h2>Stardew Valley Fishing Mechanic</h2>
-                            </div>
-                        </div>
-                        <div className="project_card">
-                            <img src={ StardewFishingJPG } alt="Stardew Valley Replicated Fishing Mechanic"></img>
-                            <div>
-                                <h2>Stardew Valley Fishing Mechanic</h2>
-                            </div>
-                        </div>
-                        <div className="project_card">
-                            <img src={ StardewFishingJPG } alt="Stardew Valley Replicated Fishing Mechanic"></img>
-                            <div>
-                                <h2>Stardew Valley Fishing Mechanic</h2>
-                            </div>
-                        </div>
-                        <div className="project_card">
-                            <img src={ StardewFishingJPG } alt="Stardew Valley Replicated Fishing Mechanic"></img>
-                            <div>
-                                <h2>Stardew Valley Fishing Mechanic</h2>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
         )
     }
 }
-
-export default MainBodyFrontPage;

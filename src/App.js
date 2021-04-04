@@ -1,19 +1,19 @@
 import './App.css';
-import Header from './Components/Header/Header.js';
-import TopPage from './Components/Top_Page/TopPage.js';
-import './Components/Main_Body_Frontpage/MainBodyFunctions.js';
-import MainBodyFrontPage from './Components/Main_Body_Frontpage/MainBodyFrontPage.js';
-import Footer from './Components/Footer/Footer.js';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './Functions.js';
+import Home from './Pages/Home';
 
 
 function App() {
   return (
     <div className="App">
-      <TopPage />
-      <Header />
-      <MainBodyFrontPage />
-      <Footer />
+      <BrowserRouter>
+        <div>
+          <Switch>
+            <Route path="/" component={ Home } />
+          </Switch>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }

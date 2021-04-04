@@ -1,7 +1,8 @@
 .footer_container {
-    min-height: 100px;
+    min-height: 200px;
     width: 100%;
     background-color: rgb(26, 26, 31);
+    padding-bottom: 2%;
 }
 
 .footer_container h2{
@@ -12,15 +13,27 @@
 
 .footer_container h2 a {
     color: rgb(155, 73, 170);
-    text-shadow: rgb(110, 34, 110) 1px 1px 1px;
 }
 
 .footer_container h2 a:hover {
-    color: rgb(179, 121, 189);
+    color: rgb(226, 130, 186);
 }
 
 .footer_info {
     display: flex;
     justify-content:space-evenly;
     color: rgb(245, 245, 245);
+}
+
+.footer_container li h3 {
+    text-align: left;
+}
+
+.footer_container li h3 a {
+    text-decoration: none;
+    color: rgb(155, 73, 170)
+}
+
+.footer_container li h3 a:hover {
+    color: rgb(226, 130, 186);
 }
