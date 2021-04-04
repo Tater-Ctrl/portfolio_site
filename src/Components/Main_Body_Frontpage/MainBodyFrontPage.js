@@ -13,6 +13,7 @@ import BrainJam                 from '../../Resources/brainjam.jpg';
 
 var consoleText1 = false;
 var consoleText2 = false;
+var consoleText3 = false;
 
 var GIFContainer = {
     stardew_valley_fishing: StardewFishingGIF,
@@ -35,6 +36,7 @@ export default class MainBodyFrontPage extends React.Component {
         window.addEventListener('scroll', this.handleScroll, true);
         this.consoleTextUnderline(this.console_text_one_underline);
         this.consoleTextUnderline(this.console_text_two_underline);
+        this.consoleTextUnderline(this.console_text_three_underline);
 
         var gameMechanicsChildren = [].slice.call(document.getElementById("game_mechanics").children);
 
@@ -52,6 +54,10 @@ export default class MainBodyFrontPage extends React.Component {
         if(this.consoleTextInViewport(0, this.console_text_two) && !consoleText2) {
             this.consoleTextAnim(this.console_text_two, this.console_text_two.innerHTML);
             consoleText2 = true;
+        }
+        if(this.consoleTextInViewport(0, this.console_text_three) && !consoleText3) {
+            this.consoleTextAnim(this.console_text_three, this.console_text_three.innerHTML);
+            consoleText3 = true;
         }
     }
 
@@ -176,8 +182,13 @@ export default class MainBodyFrontPage extends React.Component {
                             <h1 ref={(el) => this.console_text_two_underline = el}>_</h1>
                         </div>
                     </div>
-                    <div className="project_card_container">
 
+                    {/* START OF WEBSITE SECTION */}
+                    <div className="container_title" id="websites">
+                        <div id="console_text_container">
+                            <h1 ref={(el) => this.console_text_three = el}>Websites</h1>
+                            <h1 ref={(el) => this.console_text_three_underline = el}>_</h1>
+                        </div>
                     </div>
                 </div>
             </div>
