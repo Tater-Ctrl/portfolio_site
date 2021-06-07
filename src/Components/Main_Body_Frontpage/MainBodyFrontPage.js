@@ -9,9 +9,14 @@ import TerrainDeformation2DJPG  from '../../Resources/terrain_deformation_2d.jpg
 import HouseBuilding2DGIF       from '../../Resources/house_building_2d.gif';
 import HouseBuilding2DJPG       from '../../Resources/house_building_2d.JPG';
 import ProceduralMap2DJPG       from '../../Resources/procedural_map_2d.jpg';
+import VoxelUE4JPG              from '../../Resources/VoxelUE4.JPG';
+import VoxelUE4GIF              from '../../Resources/VoxelUE4.gif';
+
+import VoxelCurrent             from '../../Resources/VoxelBigWorld.JPG'
 import HobbySiteOne             from '../../Resources/website_hobby_one.JPG';
 import HobbySiteTwo             from '../../Resources/website_hobby_two.JPG';
 import Portfolio                from '../../Resources/portfolio_image.jpg';
+
 
 var consoleText1 = false;
 var consoleText2 = false;
@@ -23,6 +28,7 @@ var GIFContainer = {
     terrain_deformation_2d: TerrainDeformation2DGIF,
     house_building_2d: HouseBuilding2DGIF,
     procedural_map_2d: ProceduralMap2DJPG,
+    cubeworld: VoxelUE4GIF,
 }
 
 var JPGContainer = {
@@ -31,6 +37,7 @@ var JPGContainer = {
     terrain_deformation_2d: TerrainDeformation2DJPG,
     house_building_2d: HouseBuilding2DJPG,
     procedural_map_2d: ProceduralMap2DJPG,
+    cubeworld: VoxelUE4JPG,
 }
 
 export default class MainBodyFrontPage extends React.Component {
@@ -120,22 +127,22 @@ export default class MainBodyFrontPage extends React.Component {
                             <div id="main_project_element">
                                 <h1 >Current Project</h1>
                                 <p>
-                                    Creating a portfolio websites (This one specifically) and filling it up with previous and current projects I got going on.
+                                    Been working to learn C++ to get a better understanding of lower level languages, been creating my own 2D and 3D Game Engines and using Unreal Engine 4/5 for practice, as well as reading The C++ Programming Language Fourth Edition by Bjarne Stroustrup.
                                 </p>
                                 <p>
-                                    I've been jumping back and forth between Game Development and Web Development for quite some time, I figured it was time to combine both to show off some of the things I've done rather than letting it sit in a backup HDD.
+                                    I've always had an interest for voxel based games, like Minecraft or Astroneer, my recent project is inspired by Cube World, I was disappointed to find out it was abandoned by it's original developer and it led me to wanna create something similar to the original Cube World.
                                 </p>
                                 <p className="main_project_text_1280">
-                                    The website itself is not complete as of yet, it's lacking a lot of my projects and basic website functionality like mobile support etc and other things. Eventually I hope to have a page per project talking about what techniques I used and showing snippets of code where I explain how I used them.
+                                    The game is split up into 32x32x256 chunks, each block being 60cm in unreal units. I use greedy meshing and occlusion culling to improve performance and limit draw calls, as well as a Texture Atlas containing all textures. The map itself is generated using a 2D simplex noise, and currently working to integrate a perlin / simplex worms algorithm to generate caves.
                                 </p>
                                 <p className="main_project_text_1600">
-                                    I've also got some bigger side projects going on at the moment, I recently started collaborating with 2 different groups on different projects, so the website got slightly delayed cause of that.
+                                    The more I've learned about C++, the more I start to appreciate the extra control and performance it gives you, but with the extra control it also allows the programmer to make more mistakes than other languages.
                                 </p>
                                 <a href="home" >
                                     <h3 className="main_project_button">Read More</h3>
                                 </a>
                             </div>
-                            <img src={ Portfolio } alt="Participating in a Game Jam called Brain Jam" id="main_project_element"/>
+                            <img src={ VoxelCurrent } alt="Unreal Engine 4 Cube World Inspiration" id="main_project_element"/>
                         </div>
                     </div>
                     <div className="container_title" id="portfolio">
@@ -145,6 +152,12 @@ export default class MainBodyFrontPage extends React.Component {
                         </div>
                     </div>
                     <div className="project_card_container" id="game_mechanics">
+                        <a href="https://github.com/Tater-Ctrl/UE4-Voxel-World" target="_blank" rel="noreferrer" className="project_card" id="cubeworld">
+                            <img src={ VoxelUE4JPG } alt="Unreal Engine 4 Voxel World"></img>
+                            <div>
+                                <h2>Unreal Engine 4 Voxel World</h2>
+                            </div>
+                        </a>
                         <a href="https://github.com/Tater-Ctrl/2D-RPG-Mechanics/tree/master/Inventory" target="_blank" rel="noreferrer" className="project_card" id="multiplayer_inventory">
                             <img src={ MultiplayerInventoryJPG } alt="Unity Multiplayer Inventory"></img>
                             <div>

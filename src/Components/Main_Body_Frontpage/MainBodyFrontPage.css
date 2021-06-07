@@ -47,8 +47,9 @@
     margin-top: 1.5%;
     margin: 4px;
     border-radius: 15px;
-    flex: 0 1 calc(20% - 20px);
+    flex: 0 1 calc(16.6% - 20px);
     height: auto;
+    color: rgb(245, 245, 245);
     background-color: rgb(75, 77, 90);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: 0.3s;
@@ -143,10 +144,28 @@
     .main_project_text_1600 {
         display: none;
     }
+
+    .project_card  h2{
+        font-size: 20px;
+    }
 }
 
 @media only screen and (max-width: 1279px) {
     .main_project_text_1280 {
         display: none;
+    }
+
+    .project_card {
+        flex: 0 1 calc(20% - 20px);
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .project_card {
+        flex: 0 1 calc(25% - 20px);
+    }
+
+    .project_card h2 {
+        font-size: 18px;
     }
 }
